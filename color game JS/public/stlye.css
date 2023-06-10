@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    z-index: 0;
+    font-family: monospace;
+    font-size: calc(100% +6rem);
+}
+
+body {
+    background: #222;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+main {
+    width: 80%;
+    padding: 50px 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "choice display"
+        "hr hr"
+        "anwser anwser";
+    color: white;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: min-content minmax(300px, 500px);
+    place-content: center;
+}
+
+main main .choice {
+    grid-area: choice;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .choice>span {
+    font-size: 20px;
+}
+
+main .choice>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #aaa;
+    border-radius: 5px;
+    padding: 3%;
+    margin: 3%;
+    flex-grow: 1;
+}
+
+main .choice>div>a {
+    background: var(--color);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: .5rem;
+}
+
+main .choice>div>a:hover {
+    outline: 3px solid #aaa;
+    border-radius: 5px;
+}
+
+main .display {
+    grid-area: display;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .display>div {
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+main .display>div>.ShowColor {
+    width: calc(100% + 3em);
+    height: 8em;
+    border: 5px solid #aaa;
+    border-radius: 5px;
+    background: url(./img/load.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    user-select: none;
+}
+
+main .display>.form>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .display>.form>div>label {
+    font-size: 18px;
+    text-align: center;
+}
+
+main .display>.form>div>div {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+}
+
+main .display>.form>div>div>input {
+    width: 100%;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+main .display>.form>form>div {
+    font-size: 20px;
+}
+
+main .anwser {
+    grid-area: anwser;
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+main .anwser>div {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main .display>div>span {
+        font-size: 1.5rem;
+    }
+
+    main .choice>div {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+#Reset {
+    cursor: pointer;
+}
